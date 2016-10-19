@@ -1,3 +1,3 @@
 = O dia da marmota
 
-image::https://github.com/ricardozanini/ricardozanini.github.io/images/marmotando0001.png[]
+image::https://raw.githubusercontent.com/ricardozanini/ricardozanini.github.io/master/images/marmotando0001.png
