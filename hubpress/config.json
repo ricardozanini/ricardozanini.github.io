@@ -4,7 +4,13 @@
     "repositoryName": "ricardozanini.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Marmotando",
+    "description": "O dia-a-dia de um punhado de pixels marmotando",
+    "postsPerPage": "1"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
