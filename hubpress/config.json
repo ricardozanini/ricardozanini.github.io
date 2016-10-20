@@ -7,7 +7,7 @@
   "site": {
     "title": "Marmotando",
     "description": "O dia-a-dia de um punhado de pixels marmotando",
-    "postsPerPage": "1"
+    "postsPerPage": "10"
   },
   "socialnetwork": {},
   "theme": {
