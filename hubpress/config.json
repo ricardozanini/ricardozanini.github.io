@@ -9,7 +9,12 @@
     "description": "Loggando",
     "postsPerPage": "10"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "ricardozanini@gmail.com",
+    "twitter": "chains",
+    "instagram": "ricardozanini_",
+    "github": "ricardozanini"
+  },
   "theme": {
     "name": "casper"
   }
