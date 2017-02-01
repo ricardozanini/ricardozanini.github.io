@@ -1,5 +1,0 @@
-= Consultor de Investimentos
-
-image::https://raw.githubusercontent.com/ricardozanini/ricardozanini.github.io/master/images/marmotando0002.png[]
-
-O mercado está muito bom para investimentos em imóveis.
