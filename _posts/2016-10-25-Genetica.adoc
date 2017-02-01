@@ -1,5 +1,0 @@
-= Genética
-
-image::https://raw.githubusercontent.com/ricardozanini/ricardozanini.github.io/master/images/marmotando0003.png[]
-
-Tudo balela.
