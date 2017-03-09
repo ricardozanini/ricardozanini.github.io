@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Corrientes]]></title><description><![CDATA[101010]]></description><link>https://ricardozanini.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 09 Mar 2017 23:22:03 GMT</lastBuildDate><atom:link href="https://ricardozanini.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Bad Aliens GG - Uma primeira iteração]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Corrientes]]></title><description><![CDATA[101010]]></description><link>https://ricardozanini.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 09 Mar 2017 23:45:33 GMT</lastBuildDate><atom:link href="https://ricardozanini.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Bad Aliens GG - Uma primeira iteração]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no tempo <span class="line-through">escasso</span> livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que ao menos me <strong>entretenha</strong>.</p>
@@ -24,10 +24,8 @@
 <p>No MacOS tive que fazer alguns ajustes no SDK para utilizar as ferramentas de compilação e descompressão das imagens. A primeira coisa foi compilar para o meu ambiente, já que no SDK só estão compilados as versões para Windows. No Mac, <a href="http://stackoverflow.com/questions/9353444/how-to-use-install-gcc-on-mac-os-x-10-8-xcode-4-4">basta instalar o XCode com o GCC</a> e executar os comandos abaixo nos respectivos diretórios:</p>
 </div>
 <div class="paragraph">
-<p><code>gcc src/folder2c.c -o folder2c</code></p>
-</div>
-<div class="paragraph">
-<p><code>gcc src/ihx2sms.c -o ihx2sms</code></p>
+<p><code>gcc src/folder2c.c -o folder2c</code><br>
+<code>gcc src/ihx2sms.c -o ihx2sms</code></p>
 </div>
 <div class="paragraph">
 <p>Para poder gerar os <strong>assests</strong> gráficos é preciso utilizar uma ferramenta disponivel apenas para Windows criada por um <a href="http://www.smspower.org/maxim/">usuário do SMSPower</a>, a <a href="http://www.smspower.org/maxim/Software/BMP2Tile">BMP2Tile</a>. No Mac, utilizei o <a href="https://www.winehq.org">Wine 2.0</a> para executar essa ferramenta e gerar os <strong>assets</strong> a partir dos meus tiles.</p>
@@ -47,17 +45,9 @@
 </div>
 <div class="sect2">
 <h3 id="_para_saber_mais">Para saber mais:</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/sverx/devkitSMS">SDK Master System/GG: devkitSMS</a></p>
-</li>
-<li>
-<p><a href="http://sdcc.sourceforge.net/doc/sdccman.pdf">Compilador C para Z80: SDCC</a></p>
-</li>
-<li>
-<p><a href="http://www.smspower.org/forums/15888-DevkitSMSTutorial">devkitSMS Tutorial</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p><a href="https://github.com/sverx/devkitSMS">SDK Master System/GG: devkitSMS</a><br>
+<a href="http://sdcc.sourceforge.net/doc/sdccman.pdf">Compilador C para Z80: SDCC</a><br>
+<a href="http://www.smspower.org/forums/15888-DevkitSMSTutorial">devkitSMS Tutorial</a></p>
 </div>
 </div>]]></description><link>https://ricardozanini.github.io/2017/03/09/Bad-Aliens-GG-Uma-primeira-iteracao.html</link><guid isPermaLink="true">https://ricardozanini.github.io/2017/03/09/Bad-Aliens-GG-Uma-primeira-iteracao.html</guid><category><![CDATA[gamedev]]></category><category><![CDATA[ GG]]></category><category><![CDATA[ badaliens]]></category><dc:creator><![CDATA[Ricardo Zanini]]></dc:creator><pubDate>Thu, 09 Mar 2017 00:00:00 GMT</pubDate></item></channel></rss>
