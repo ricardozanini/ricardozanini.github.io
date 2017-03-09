@@ -3,7 +3,12 @@
 
 Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no tempo (escasso) livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que ao menos me *entretenha*.
 
-Pois bem. Após algumas tentativas 
+Após algumas idas e vindas, comecei o desenvolvimento do game **Bad Aliens GG** que é um *port* para o https://en.wikipedia.org/wiki/Game_Gear[Game Gear] de um game didático desenvolvido com um amigo para um projeto disciplinar feito com HTML5 e JavaScript.
+
+A idéia é utilizar os conceitos de Space Invaders e Galaga para criar um shump arcade com um clima Lo-Fi. Não tenho tato artístico e, por isso, os recursos gráficos foram limitados. Veja você mesmo:
+
+image::http://github.com/ricardozanini/ricardozanini.github.io/images/bad-aliens-gg-001.png[]
+
 
 === Para saber mais:
 
