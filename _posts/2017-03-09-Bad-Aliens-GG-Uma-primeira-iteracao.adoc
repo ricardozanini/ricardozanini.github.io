@@ -1,0 +1,12 @@
+= Bad Aliens GG - Uma primeira iteração
+:hp-tags: gamedev, GG, badaliens
+
+Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no tempo (escasso) livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que ao menos me *entretenha*.
+
+Pois bem. Após algumas tentativas 
+
+=== Para saber mais:
+
+- https://github.com/sverx/devkitSMS[SDK Master System/GG: devkitSMS]
+- http://sdcc.sourceforge.net/doc/sdccman.pdf[Compilador C para Z80: SDCC]
+- http://www.smspower.org/forums/15888-DevkitSMSTutorial[devkitSMS Tutorial]
