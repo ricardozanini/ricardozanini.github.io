@@ -1,7 +1,0 @@
-= Olá Mundo!
-:hp-tags:  sobre
-:hp-alt-title: About
-
-Só mais um blog de tecnologia. É preciso ao menos tentar deixar registrado as minhas descobertas e elocubramentos para futura referência e, quiçá, ajudar alguém por ai.
-
-Até!
