@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Bad Aliens GG - Uma primeira iteração</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://ricardozanini.github.io/favicon.ico">
+
+    <script type="text/javascript" src="//ricardozanini.github.io/themes/ichi/assets/js/vendor/fastclick.js?v=1489101139376"></script>
+    <script type="text/javascript" src="//ricardozanini.github.io/themes/ichi/assets/js/vendor/modernizr.js?v=1489101139376"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//ricardozanini.github.io/themes/ichi/assets/css/normalize.css?v=1489101139376" />
+    <link rel="stylesheet" type="text/css" href="//ricardozanini.github.io/themes/ichi/assets/css/foundation.min.css?v=1489101139376" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//ricardozanini.github.io/themes/ichi/assets/css/outdatedBrowser.min.css?v=1489101139376">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//ricardozanini.github.io/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1489101139376" />
+    <link rel="stylesheet" type="text/css" href="//ricardozanini.github.io/themes/ichi/assets/css/styles.css?v=1489101139376" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="https://ricardozanini.github.io/2017/03/09/Bad-Aliens-GG-Uma-primeira-iteracao.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Untitled" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bad Aliens GG - Uma primeira iteração" />
+    <meta property="og:description" content="Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no tempo escasso livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que" />
+    <meta property="og:url" content="https://ricardozanini.github.io/2017/03/09/Bad-Aliens-GG-Uma-primeira-iteracao.html" />
+    <meta property="article:tag" content="gamedev" />
+    <meta property="article:tag" content=" GG" />
+    <meta property="article:tag" content=" badaliens" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Bad Aliens GG - Uma primeira iteração" />
+    <meta name="twitter:description" content="Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no tempo escasso livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que" />
+    <meta name="twitter:url" content="https://ricardozanini.github.io/2017/03/09/Bad-Aliens-GG-Uma-primeira-iteracao.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Untitled" href="https://ricardozanini.github.io/rss/" />
+</head>
+<body class="post-template tag-gamedev tag-GG tag-badaliens">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar >
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="https://ricardozanini.github.io"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="https://ricardozanini.github.io">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area" >
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="https://ricardozanini.github.io"></a></li>
+                <li><a class="fi-torso" href="https://ricardozanini.github.io/about"></a></li>
+                <li><a class="fi-mail" href="https://ricardozanini.github.io/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Untitled</h1>
+            <hr>
+            <p class="blog-description"></p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="ricardozanini" class="fi-social-github"></a>
+                  <a href="chains" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-gamedev tag-GG tag-badaliens">
+
+
+            <h1 class="post-title">Bad Aliens GG - Uma primeira iteração</h1>
+
+            <span class="post-meta label"><time datetime="2017-03-09">09 Mar 2017</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no tempo <span class="line-through">escasso</span> livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que ao menos me <strong>entretenha</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Após algumas idas e vindas, comecei o desenvolvimento do game <strong>Bad Aliens GG</strong> que é um <strong>port</strong> para o <a href="https://en.wikipedia.org/wiki/Game_Gear">Game Gear</a> de um game didático desenvolvido com um amigo para um projeto disciplinar feito com HTML5 e JavaScript.</p>
+</div>
+<div class="paragraph">
+<p>A idéia é utilizar os conceitos de <a href="https://en.wikipedia.org/wiki/Space_Invaders">Space Invaders</a> e <a href="https://en.wikipedia.org/wiki/Galaga">Galaga</a> para criar um <strong>shoot-'em-up</strong> arcade com um clima Lo-Fi. Não tenho tato artístico e, por isso, os recursos gráficos ficaram limitados. Veja você mesmo:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://ricardozanini.github.io/images/bad-aliens-gg-001.png" alt="bad aliens gg 001.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Ainda em fase de prova de conceito e validação, utilizei o compilador SDCC para gerar o código de máquina para o processador do Game Gear (z80). Além do SDCC é preciso de bibliotecas específicas do console para realizar tarefas comuns dentro do ambiente como o <a href="https://hardforum.com/threads/how-vsync-works-and-why-people-loathe-it.928593/">VSync</a> e a leitura da entrada dos controles.</p>
+</div>
+<div class="paragraph">
+<p>A biblioteca que utilizei foi a SMSLib, concebida por <a href="https://github.com/sverx/">este usuário do GitHub</a>. Além da SMSLib ele também montou um <a href="https://github.com/sverx/devkitSMS">SDK</a> para facilitar o trabalho de desenvolvimento e compilação em ROM final para ser executada no emulador ou em um <strong>flashcart</strong>. Todo o <strong>setup</strong> para montar o ambiente está disponibilizado na página inicial do repositório do SDK.</p>
+</div>
+<div class="paragraph">
+<p>No MacOS tive que fazer alguns ajustes no SDK para utilizar as ferramentas de compilação e descompressão das imagens. A primeira coisa foi compilar para o meu ambiente, já que no SDK só estão compilados as versões para Windows. No Mac, <a href="http://stackoverflow.com/questions/9353444/how-to-use-install-gcc-on-mac-os-x-10-8-xcode-4-4">basta instalar o XCode com o GCC</a> e executar os comandos abaixo nos respectivos diretórios:</p>
+</div>
+<div class="paragraph">
+<p><code>gcc src/folder2c.c -o folder2c</code></p>
+</div>
+<div class="paragraph">
+<p><code>gcc src/ihx2sms.c -o ihx2sms</code></p>
+</div>
+<div class="paragraph">
+<p>Para poder gerar os <strong>assests</strong> gráficos é preciso utilizar uma ferramenta disponivel apenas para Windows criada por um <a href="http://www.smspower.org/maxim/">usuário do SMSPower</a>, a <a href="http://www.smspower.org/maxim/Software/BMP2Tile">BMP2Tile</a>. No Mac, utilizei o <a href="https://www.winehq.org">Wine 2.0</a> para executar essa ferramenta e gerar os <strong>assets</strong> a partir dos meus tiles.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://ricardozanini.github.io/images/numbers-tilemap-2x.png" alt="numbers tilemap 2x.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Para gerar os gráficos do game, desenhei cada tile em 8x8 pixels no <a href="https://pixenapp.com">Pixen</a> e montei as cenas do game utilizando o <a href="http://www.mapeditor.org">Tiled</a>. Com os sprites e tiles formados, gerei as imagens em PNG 8 bit utilizando o <a href="http://www.pixelmator.com/mac/">Pixelmator</a>. Essas imagens foram compiladas pelo BMP2Tile e utilizadas mais tarde no game.</p>
+</div>
+<div class="paragraph">
+<p>Nos próximos posts eu pretendo adentrar nos primeiros passos da prova de conceito: desenhar os tiles e sprites, troca de cena, leitura de entrada de dados, colisão e etc.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_para_saber_mais">Para saber mais:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/sverx/devkitSMS">SDK Master System/GG: devkitSMS</a></p>
+</li>
+<li>
+<p><a href="http://sdcc.sourceforge.net/doc/sdccman.pdf">Compilador C para Z80: SDCC</a></p>
+</li>
+<li>
+<p><a href="http://www.smspower.org/forums/15888-DevkitSMSTutorial">devkitSMS Tutorial</a></p>
+</li>
+</ul>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="https://ricardozanini.github.io/tag/gamedev/">gamedev</a>, <a href="https://ricardozanini.github.io/tag/GG/"> GG</a>, <a href="https://ricardozanini.github.io/tag/badaliens/"> badaliens</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ricardozanini.github.io/2017/03/09/Bad-Aliens-GG-Uma-primeira-iteracao.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Bad%20Aliens%20GG%20-%20Uma%20primeira%20itera%C3%A7%C3%A3o&amp;url=https://ricardozanini.github.io/2017/03/09/Bad-Aliens-GG-Uma-primeira-iteracao.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=https://ricardozanini.github.io/2017/03/09/Bad-Aliens-GG-Uma-primeira-iteracao.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>Ricardo Zanini</h4>
+                        <img src="https://avatars0.githubusercontent.com/u/1538000?v&#x3D;3">
+                        
+                        
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//ricardozanini.github.io/themes/ichi/assets/js/outdatedBrowser.min.js?v=1489101139376"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//ricardozanini.github.io/themes/ichi/assets/js/min/built.js?v=1489101139376"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+</body>
+</html>
