@@ -5,9 +5,10 @@
     "branch": "master"
   },
   "site": {
-    "title": "Untitled",
-    "description": "",
-    "postsPerPage": "10"
+    "title": "Corrientes",
+    "description": "101010",
+    "postsPerPage": "10",
+    "disqus": "corrientes-blog"
   },
   "socialnetwork": {
     "email": "ricardozanini@gmail.com",
@@ -16,6 +17,6 @@
     "github": "ricardozanini"
   },
   "theme": {
-    "name": "ichi"
+    "name": "casper"
   }
 }
