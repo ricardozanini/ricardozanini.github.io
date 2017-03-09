@@ -9,18 +9,21 @@ A idéia é utilizar os conceitos de https://en.wikipedia.org/wiki/Space_Invader
 
 image::https://ricardozanini.github.io/images/bad-aliens-gg-001.png[]
 
+
 Ainda em fase de prova de conceito e validação, utilizei o compilador SDCC para gerar o código de máquina para o processador do Game Gear (z80). Além do SDCC é preciso de bibliotecas específicas do console para realizar tarefas comuns dentro do ambiente como o https://hardforum.com/threads/how-vsync-works-and-why-people-loathe-it.928593/[VSync] e a leitura da entrada dos controles.
 
 A biblioteca que utilizei foi a SMSLib, concebida por https://github.com/sverx/[este usuário do GitHub]. Além da SMSLib ele também montou um https://github.com/sverx/devkitSMS[SDK] para facilitar o trabalho de desenvolvimento e compilação em ROM final para ser executada no emulador ou em um *flashcart*. Todo o *setup* para montar o ambiente está disponibilizado na página inicial do repositório do SDK.
 
 No MacOS tive que fazer alguns ajustes no SDK para utilizar as ferramentas de compilação e descompressão das imagens. A primeira coisa foi compilar para o meu ambiente, já que no SDK só estão compilados as versões para Windows. No Mac, http://stackoverflow.com/questions/9353444/how-to-use-install-gcc-on-mac-os-x-10-8-xcode-4-4[basta instalar o XCode com o GCC] e executar os comandos abaixo nos respectivos diretórios:
 
-`gcc src/folder2c.c -o folder2c`
+`gcc src/folder2c.c -o folder2c`  
+
 `gcc src/ihx2sms.c -o ihx2sms`
 
 Para poder gerar os *assests* gráficos é preciso utilizar uma ferramenta disponivel apenas para Windows criada por um http://www.smspower.org/maxim/[usuário do SMSPower], a http://www.smspower.org/maxim/Software/BMP2Tile[BMP2Tile]. No Mac, utilizei o https://www.winehq.org[Wine 2.0] para executar essa ferramenta e gerar os *assets* a partir dos meus tiles.
 
 image::https://ricardozanini.github.io/images/numbers-tilemap-2x.png[]
+
 
 Para gerar os gráficos do game, desenhei cada tile em 8x8 pixels no https://pixenapp.com[Pixen] e montei as cenas do game utilizando o http://www.mapeditor.org[Tiled]. Com os sprites e tiles formados, gerei as imagens em PNG 8 bit utilizando o http://www.pixelmator.com/mac/[Pixelmator]. Essas imagens foram compiladas pelo BMP2Tile e utilizadas mais tarde no game.
 
