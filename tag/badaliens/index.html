@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://ricardozanini.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//ricardozanini.github.io/themes/casper/assets/css/screen.css?v=1489103134127" />
+    <link rel="stylesheet" type="text/css" href="//ricardozanini.github.io/themes/casper/assets/css/screen.css?v=1489165874958" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://ricardozanini.github.io/https://ricardozanini.github.io/tag/badaliens/" />
@@ -27,7 +27,13 @@
     <meta name="twitter:url" content="https://ricardozanini.github.io/https://ricardozanini.github.io/tag/badaliens/" />
     
     <script type="application/ld+json">
-null
+{
+    "@context": "http://schema.org",
+    "@type": "Series",
+    "publisher": "Corrientes",
+    "url": "https://ricardozanini.github.io/",
+    "name": "badaliens"
+}
     </script>
 
     <meta name="generator" content="HubPress" />
@@ -71,13 +77,13 @@ null
             <div id="preamble">
     <div class="sectionbody">
     <div class="paragraph">
-    <p>Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no tempo <span class="line-through">escasso</span> livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que ao menos me <strong>entretenha</strong>.</p>
+    <p>Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no meu (pouco) tempo livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que ao menos me <strong>entretenha</strong>.</p>
     </div>
     <div class="paragraph">
-    <p>Após algumas idas e vindas, comecei o desenvolvimento do game <strong>Bad Aliens GG</strong> que é um <strong>port</strong> para o <a href="https://en.wikipedia.org/wiki/Game_Gear">Game Gear</a> de um game didático desenvolvido com um amigo para um projeto disciplinar feito com HTML5 e JavaScript.</p>
+    <p>Após algumas idas e vindas, comecei o desenvolvimento do game <strong>Bad Aliens GG</strong> que é um <em>port</em> para o <a href="https://en.wikipedia.org/wiki/Game_Gear">Game Gear</a> de um game desenvolvido com um amigo para um projeto didático feito com HTML5 e JavaScript.</p>
     </div>
     <div class="paragraph">
-    <p>A idéia é utilizar os conceitos de <a href="https://en.wikipedia.org/wiki/Space_Invaders">Space Invaders</a> e <a href="https://en.wikipedia.org/wiki/Galaga">Galaga</a> para criar um <strong>shoot-'em-up</strong> arcade com um clima Lo-Fi. Não tenho tato artístico e, por isso, os recursos gráficos ficaram limitados. Veja você mesmo:</p>
+    <p>A idéia é utilizar os conceitos de <a href="https://en.wikipedia.org/wiki/Space_Invaders">Space Invaders</a> e <a href="https://en.wikipedia.org/wiki/Galaga">Galaga</a> para criar um <strong>shoot-'em-up</strong> arcade com um clima Lo-Fi. Não tenho tato artístico e, por isso, os recursos gráficos ficaram limitados:</p>
     </div>
     <div class="imageblock">
     <div class="content">
@@ -85,10 +91,10 @@ null
     </div>
     </div>
     <div class="paragraph">
-    <p>Ainda em fase de prova de conceito e validação, utilizei o compilador SDCC para gerar o código de máquina para o processador do Game Gear (z80). Além do SDCC é preciso de bibliotecas específicas do console para realizar tarefas comuns dentro do ambiente como o <a href="https://hardforum.com/threads/how-vsync-works-and-why-people-loathe-it.928593/">VSync</a> e a leitura da entrada dos controles.</p>
+    <p>Ainda em fase de prova de conceito e validação, utilizei o compilador <a href="http://sdcc.sourceforge.net/">SDCC</a> para gerar o código de máquina para o processador do Game Gear (z80). Além do SDCC é preciso do recurso de bibliotecas específicas do console para realizar tarefas comuns como o <a href="https://hardforum.com/threads/how-vsync-works-and-why-people-loathe-it.928593/">VSync</a>, leitura da entrada de joysticks, carregamento de recursos gráficos, controle de efeitos de som, entre outros.</p>
     </div>
     <div class="paragraph">
-    <p>A biblioteca que utilizei foi a SMSLib, concebida por <a href="https://github.com/sverx/">este usuário do GitHub</a>. Além da SMSLib ele também montou um <a href="https://github.com/sverx/devkitSMS">SDK</a> para facilitar o trabalho de desenvolvimento e compilação em ROM final para ser executada no emulador ou em um <strong>flashcart</strong>. Todo o <strong>setup</strong> para montar o ambiente está disponibilizado na página inicial do repositório do SDK.</p>
+    <p>A biblioteca que utilizei foi a SMSLib, concebida por <a href="https://github.com/sverx/">este usuário do GitHub</a>. Além da SMSLib ele também montou um <a href="https://github.com/sverx/devkitSMS">SDK</a> para facilitar o trabalho de desenvolvimento e compilação em ROM final para ser executada no emulador ou em um <em>flashcart</em>. Todo o <em>setup</em> para montar o ambiente está disponibilizado na <a href="https://github.com/sverx/devkitSMS">página inicial</a> do repositório do SDK.</p>
     </div>
     <div class="paragraph">
     <p>No MacOS tive que fazer alguns ajustes no SDK para utilizar as ferramentas de compilação e descompressão das imagens. A primeira coisa foi compilar para o meu ambiente, já que no SDK só estão compilados as versões para Windows. No Mac, <a href="http://stackoverflow.com/questions/9353444/how-to-use-install-gcc-on-mac-os-x-10-8-xcode-4-4">basta instalar o XCode com o GCC</a> e executar os comandos abaixo nos respectivos diretórios:</p>
@@ -98,7 +104,7 @@ null
     <code>gcc src/ihx2sms.c -o ihx2sms</code></p>
     </div>
     <div class="paragraph">
-    <p>Para poder gerar os <strong>assests</strong> gráficos é preciso utilizar uma ferramenta disponivel apenas para Windows criada por um <a href="http://www.smspower.org/maxim/">usuário do SMSPower</a>, a <a href="http://www.smspower.org/maxim/Software/BMP2Tile">BMP2Tile</a>. No Mac, utilizei o <a href="https://www.winehq.org">Wine 2.0</a> para executar essa ferramenta e gerar os <strong>assets</strong> a partir dos meus tiles.</p>
+    <p>Para poder gerar os <em>assests</em> gráficos foi preciso utilizar uma ferramenta disponível apenas para Windows criada por um <a href="http://www.smspower.org/maxim/">usuário do SMSPower</a>, a <a href="http://www.smspower.org/maxim/Software/BMP2Tile">BMP2Tile</a>. No Mac, utilizei o <a href="https://www.winehq.org">Wine 2.0</a> para executar essa ferramenta e gerar os <em>assets</em> no formato utilizado pela SMSLib a partir dos meus tiles.</p>
     </div>
     <div class="imageblock">
     <div class="content">
@@ -106,10 +112,10 @@ null
     </div>
     </div>
     <div class="paragraph">
-    <p>Para gerar os gráficos do game, desenhei cada tile em 8x8 pixels no <a href="https://pixenapp.com">Pixen</a> e montei as cenas do game utilizando o <a href="http://www.mapeditor.org">Tiled</a>. Com os sprites e tiles formados, gerei as imagens em PNG 8 bit utilizando o <a href="http://www.pixelmator.com/mac/">Pixelmator</a>. Essas imagens foram compiladas pelo BMP2Tile e utilizadas mais tarde no game.</p>
+    <p>Para gerar os gráficos do game, desenhei cada tile em 8x8 pixels no <a href="https://pixenapp.com">Pixen</a> e montei as cenas do game utilizando o <a href="http://www.mapeditor.org">Tiled</a>. Com os <em>sprites</em> e tiles formados, gerei as imagens em PNG indexadas em 8 bit utilizando o <a href="http://www.pixelmator.com/mac/">Pixelmator</a>. Essas imagens foram compiladas pelo BMP2Tile e utilizadas mais tarde no game.</p>
     </div>
     <div class="paragraph">
-    <p>Nos próximos posts eu pretendo adentrar nos primeiros passos da prova de conceito: desenhar os tiles e sprites, troca de cena, leitura de entrada de dados, colisão e etc.</p>
+    <p>A partir dessa primeira iteração com as ferramentas e o ambiente configurado, foi possível iniciar o desenvolvimento, algo que pretendo abordar nos próximos posts. Há muito assunto ainda à desenvolver: como desenhar os tiles e <em>sprites</em>, troca de cena, leitura de entrada do <em>joystick</em>, colisão e etc.</p>
     </div>
     </div>
     </div>
@@ -158,9 +164,11 @@ null
 
         hljs.initHighlightingOnLoad();
       </script>
+       
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//ricardozanini.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1489103134127"></script>
-    <script type="text/javascript" src="//ricardozanini.github.io/themes/casper/assets/js/index.js?v=1489103134127"></script>
+    <script type="text/javascript" src="//ricardozanini.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1489165874958"></script>
+    <script type="text/javascript" src="//ricardozanini.github.io/themes/casper/assets/js/index.js?v=1489165874958"></script>
 
 </body>
 </html>
