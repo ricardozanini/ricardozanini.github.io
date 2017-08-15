@@ -1,7 +1,7 @@
 = Bad Aliens GG - Uma primeira iteração
 :hp-tags: gamedev, GG, badaliens
 
-Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no meu (pouco) tempo livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que ao menos me *entretenha*.
+Um dos meus hobbies é escrever software novo para hardware antigo. É quase uma perseguição doentia conseguir criar um game com poucos bytes para um console que me acompanha desde a infância. Procuro no meu (pouco) tempo livre estudar a arquitetura dos consoles antigos para poder criar algo convincente e que ao menos me *entretenha*.
 
 Após algumas idas e vindas, comecei o desenvolvimento do game **Bad Aliens GG** que é um _port_ para o https://en.wikipedia.org/wiki/Game_Gear[Game Gear] de um game desenvolvido com um amigo para um projeto didático feito com HTML5 e JavaScript.
 
