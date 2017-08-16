@@ -1,8 +1,66 @@
-= How to do be great using Ansible Galaxy 
+= How Ansible Galaxy can short your way to awesomeness
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 // :hp-image: /covers/cover.png
 // :published_at: 2019-01-31
 :hp-tags: Ansible, Ansible_Galaxy
-:hp-alt-title: How to do be great using Ansible Galaxy
+:hp-alt-title: How Ansible Galaxy can short your way to awesomeness
 
+You've learned http://docs.ansible.com/ansible/latest/intro.html[all the basics of Ansible] and now are arguing yourself: where's the patterns? How do I start using Ansible on a regular basis? How can I do this or that? I'm newbie on OS and I barely know where to start..
 
+I don't know if I'll provide the answers for all these questions, but I may help guide your way through it.
+
+Quoting from the https://galaxy.ansible.com/intro[official Ansible Galaxy's documentation]:
+____
+Ansible Galaxy is Ansible’s official community hub for sharing Ansible roles. A role is the Ansible way of bundling automation content and making it reusable.
+____
+
+**Reusable**. That's the word IT people always (or should) care about. Roles on Ansible is a great way to reuse a piece of task that you always have to do when provisioning some environment. I won't extend myself here on how create a role, for that please take a look on the http://docs.ansible.com/ansible/latest/playbooks_reuse.html[official docs] that you should have your answers.
+
+Instead I'd like to bring your attention on Ansible Galaxy and how you can reuse someone else's work or contributing to them. Galaxy is the https://hub.docker.com/[Docker Hub] for docker images or the Github for opensource projects. There will you find a lot of roles people already did so you could take them and orchestrate your playbook on a way that could do barely anything you need.
+
+Let's take a https://bitbucket.org/tecnobizz/vagrant-alm[project I'm working on] that's provisioning a environment to setup a sort of an https://en.wikipedia.org/wiki/Application_lifecycle_management[ALM process]. For that, I need to provision three servers: https://jenkins.io/[Jenkins] for CI/CD process, https://www.sonarsource.com/[SonarSource] for quality analysis and http://www.sonatype.org/nexus/[Nexus] for artifact repository.
+
+To provision all the three servers requires a lot of vanilla work that I, as a newbie on Ansible and SO in general surely will take *a lot* of time to do so. And we don't have that time, right? Take a deep breath, a couple of coffee and go along with me.
+
+=== 1) Define what you need to do
+
+First things first. Draw and write down everything you need to provision: a CentOS machine? Needs NodeJs? Java? PHP? What else? What are the application's requirements? Try to be as detailed as you need to. Take your time to plan your way down the hill, so you'll save time ahead.
+
+For this project, I just need the aforementioned 3 servers: Jenkins, SonarSource and Nexus on the latest version possible.
+
+=== 2) Prepare your environment
+
+Start by http://docs.ansible.com/ansible/latest/intro_installation.html[installing Ansible]. After that, be sure that Ansible Galaxy is on your path by typing this on your console:
+
+```
+$ ansible-galaxy --version
+```
+
+You should see an output like this:
+
+```
+ansible-galaxy 2.3.1.0
+config file = /etc/ansible/ansible.cfg
+configured module search path = Default w/o overrides
+python version = 2.7.13 (default, Jun 26 2017, 10:20:05) [GCC 7.1.1 20170622 (Red Hat 7.1.1-3)]
+```
+
+Now configure your `ANSIBLE_ROLES_PATH`. This path is where Ansible Galaxy will save every role you install and where's Ansible will look at when resolving the imports from your playbook. The http://docs.ansible.com/ansible/latest/galaxy.html#roles-path[default path] is `/etc/ansible/roles`. Make sure that the user who's installing the roles have write permissions. If you are running on your own machine, make it yours:
+
+```
+$ sudo chown -R myuser:myuser /etc/ansible/roles
+```
+
+And that's it! You should have your environment set up. For more detailed information about the installation and configuration of Ansible Galaxy, please http://docs.ansible.com/ansible/latest/galaxy.html[check the docs].
+
+=== 3) Looking for roles that you need
+
+So now you have the plan for what you need to do and the Ansible Galaxy configured on your environment. Let's search for the roles that we need to **compose** our playbook so we can provision all the three servers at once.
+
+Remember that you just need to bring up all these roles from the Galaxy repository and run them on a orchestrate fashion to do what you need.
+
+You have at least three ways to search for roles:
+
+1. Ansible Galaxy command line: `$ ansible-galaxy search *jenkins*`. You'll see a list of roles with the name you provide as an argument. It's a simple and fast way to look for a role, but not my preferable way. This list only provides the name and a short description for the role. This must be suffice if what you are looking for is not so popular. But like the example above, the result may return a lot of options. What to choose?
+
+2. Ansible Galaxy Web Search. Go to https://galaxy.ansible.com/ and start exploring or browsing for a role. Let's use the same example as before and search for Jenkins. Click on "Browse Roles" and type "Jenkins" on keyword (or just https://galaxy.ansible.com/list#/roles?page=1&page_size=10&autocomplete=jenkins[click here]). You'll see a nicer interface and a sort function that will make all the difference: `Stargazers`. That means we can download the most relevant and upvoted by the community. Prefer to take that one with the most starts. For this example, the chosen role will be the https://galaxy.ansible.com/geerlingguy/jenkins/[geerlingguy one]. 
