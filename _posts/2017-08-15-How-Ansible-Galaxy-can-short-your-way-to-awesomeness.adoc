@@ -1,6 +1,6 @@
 = How Ansible Galaxy can short your way to awesomeness
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
-:hp-image: /covers/galaxy_cover.jpg
+// :hp-image: /covers/galaxy_cover.jpg
 // :published_at: 2019-01-31
 :hp-tags: Ansible, Ansible_Galaxy
 :hp-alt-title: How Ansible Galaxy can short your way to awesomeness
