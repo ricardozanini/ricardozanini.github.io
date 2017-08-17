@@ -8,7 +8,7 @@
   "site": {
     "title": "Corrientes",
     "description": "101010",
-    "postsPerPage": "10",
+    "postsPerPage": "1",
     "disqus": "corrientes-blog",
     "logo": "",
     "cover": "",
