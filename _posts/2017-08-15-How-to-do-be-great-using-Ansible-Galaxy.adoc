@@ -16,13 +16,13 @@ ____
 
 **Reusable**. That's the word IT people always (or should) care about. Roles on Ansible is a great way to reuse a piece of task that you always have to do when provisioning some environment. I won't extend myself here on how to create a role, for that please take a look on the http://docs.ansible.com/ansible/latest/playbooks_reuse.html[official docs] that you should have your answers.
 
-Instead I'd like to bring your attention on Ansible Galaxy and how you can reuse someone else's work or contributing to them. Galaxy is the https://hub.docker.com/[Docker Hub] for docker images or the Github for open source projects. There will you find a lot of roles people already did so you could take them and orchestrate your playbook on a way that could do barely anything you need.
+Instead, I'd like to bring your attention on Ansible Galaxy and how you can reuse someone else's work or contribute to them. Galaxy is the https://hub.docker.com/[Docker Hub] for docker images or the Github for open source projects. There will you find a lot of roles people already did so you could take them and orchestrate your playbook on a way that it could do barely anything you need.
 
-So Ansible Galaxy can help you with: (a) learn by example by looking on the code other people already provided and; (b) create great playbooks by orchestrating with roles done by the community.
+So Ansible Galaxy can help you with: (a) learn by example by looking on the code other people already provided and; (b) create great playbooks by orchestrating with roles that have been done by the community.
 
-Let's take a look on a https://bitbucket.org/tecnobizz/vagrant-alm[project I'm working on] that's provisioning a environment to setup a sort of an https://en.wikipedia.org/wiki/Application_lifecycle_management[ALM process]. For that, I need to provision three servers: https://jenkins.io/[Jenkins] for CI/CD process, https://www.sonarsource.com/[SonarSource] for quality analysis and http://www.sonatype.org/nexus/[Nexus] for artifact repository.
+Let's take a look on a https://bitbucket.org/tecnobizz/vagrant-alm[project I'm working on] that's provisioning a environment to set up a sort of an https://en.wikipedia.org/wiki/Application_lifecycle_management[ALM process]. For that, I need to provision three servers: https://jenkins.io/[Jenkins] for CI/CD process, https://www.sonarsource.com/[SonarSource] for quality analysis and http://www.sonatype.org/nexus/[Nexus] for artifact repository.
 
-To provision all the three servers requires a lot of vanilla work that I, as a newbie on Ansible and SO in general surely will take *a lot* of time to do so. And we don't have that time, right? Take a deep breath, a couple of coffee and go along with me.
+To provision all the three servers requires a lot of vanilla work that I, as an only enthusiast on Ansible and SO in general surely will take *a lot* of time to do so. And we don't have that time, right? Take a deep breath, a couple of coffee and go along with me.
 
 === 1) Define what you need to do
 
@@ -59,7 +59,7 @@ And that's it! You should have your environment set up. For more detailed inform
 
 So now you have the plan for what you need to do and the Ansible Galaxy set up on your environment. Let's search for the roles that we need to **compose** our playbook so we can provision all the three servers at once.
 
-Remember that you just need to bring up all these roles from the Galaxy repository and run them on a orchestrate fashion to do what you need.
+Remember that you just need to bring all these roles from the Galaxy repository and run them on a orchestrate fashion to do what you need.
 
 You have at least three ways to search for roles:
 
@@ -97,8 +97,69 @@ After that, be comfortable with their code and explore everything else, trying t
 
 === 5) Test it
 
-It's time to enter in the arena and put some bytes to working on. You have to create your project.
+It's time to enter in the arena and put some bytes to working on. You have to create your project, so start small and on a directory, create a tree like this one:
 
-=== 6) Orchestrate
+```
+├── project.yml
+├── group_vars
+│   ├── all.yml
+├── inventory.ini
+├── meta
+│   └── main.yml
+├── requirements.yml
+```
 
-=== Conclusion
+Let's describe one by one:
+
+1. `project.yml`: this will be the starting point of your project, so rename it as you pleased. To start using the role we've just installed, open the file and put this on it:
+
+```
+- name: Deploy Jenkins CI
+  hosts: jenkins_server
+  remote_user: the_user
+  become: yes
+
+  roles:
+    - geerlingguy.jenkins
+```
+
+We are creating a task to just run the role given it a name, defining a host and the user who will run the process on the target machine. Please note that is beyond of the scope of this post to create a container or a virtual machine where the Ansible will run. I suggest https://www.ansible.com/docker[Docker] or https://www.vagrantup.com/docs/provisioning/ansible.html[Vagrant] to do so.
+
+2. `inventori.ini` is the file to list the machines Ansible will provision. Read more about it http://docs.ansible.com/ansible/latest/intro_inventory.html[here]. Remember that the `hosts` property described on #1 should match the host created on this file, for example:
+
+```
+[jenkins_server]
+192.168.0.32
+```
+
+3. `group_vars/all.yml`. Remember about the "role's extension points" I mentioned on step #4? This file contains all the variables that we need to set to configure the role to do what we want. So, go ahead and define the java version for the Jenkins:
+
+```
+java_packages:
+  - java-1.8.0-openjdk
+```
+
+This variable is mentioned on `geerlingguy.java` role that is a dependency from `geerlingguy.jenkins`. Isn't cool how roles can stick together to do great things?
+
+4. `meta/main.yml`. On this file we are going to list all the dependencies we need from the roles:
+
+```
+dependencies:
+  - geerlingguy.jenkins
+```
+
+This way we can tell Ansible that we need this role to perform our tasks.
+
+5. `requirements.yml`. Besides the name, this isn't a required file for your project, but it's very handy because we can list all Ansible Galaxy's roles that we need and download then if just one line of command:
+
+```
+$ ansible-galaxy -r requirements.xml
+```
+
+Go ahead and start to provision. Your Jenkins server should be provisioned on your environment and you can start making CI/CD jobs.
+
+=== The Bottom Line
+
+Now it's time to shine. Gather every role you could search for that you are going to use on your project and start chaining them together for awesomeness. In a short time you'll be creating your own roles, contributing for the ones already on the community and do a great job on your own playbooks. Just to help you out, take a look https://bitbucket.org/tecnobizz/vagrant-alm[at this project] that I did to provision all the three servers for a ALM process I was talking about at the start of this post. There I orchestrate a simple playbook to create all the three machines using just three tasks: provision Jenkins, Sonar Source and Nexus.
+
+See you next time.
