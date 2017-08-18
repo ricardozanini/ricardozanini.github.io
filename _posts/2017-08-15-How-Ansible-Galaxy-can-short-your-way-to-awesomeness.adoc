@@ -14,7 +14,7 @@ ____
 Ansible Galaxy is Ansible’s official community hub for sharing Ansible roles. A role is the Ansible way of bundling automation content and making it reusable.
 ____
 
-**Reusable**. That's the word IT people always (or should) care about. Roles on Ansible is a great way to reuse a piece of task that you always have to do when provisioning some environment. I won't extend myself here on how to create a role, for that please take a look on the http://docs.ansible.com/ansible/latest/playbooks_reuse.html[official docs] that you should have your answers.
+**Reusable**. That's the word IT people always (or should) care about. Roles on Ansible is a great way to reuse a piece of task that you always have to do when provisioning some environment. I won't extend myself here on how to create a role, for that please take a look on the http://docs.ansible.com/ansible/latest/playbooks_roles.html[official docs] that you should have your answers.
 
 Instead, I'd like to bring your attention on Ansible Galaxy and how you can reuse someone else's work or contribute to it while learning something great. Galaxy is the https://hub.docker.com/[Docker Hub] for docker images or the Github for open source projects. There will you find a lot of roles people already did so you could take them and orchestrate your playbook on a way that it could do barely anything you need.
 
