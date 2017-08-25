@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://ricardozanini.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//ricardozanini.github.io/themes/casper/assets/css/screen.css?v=1503086352624" />
+    <link rel="stylesheet" type="text/css" href="//ricardozanini.github.io/themes/casper/assets/css/screen.css?v=1503698090462" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://ricardozanini.github.io/https://ricardozanini.github.io/tag/Ansible/" />
@@ -74,13 +74,16 @@
     
     <article class="post tag-Ansible tag-Ansible-Galaxy">
         <header class="post-header">
-            <h2 class="post-title"><a href="https://ricardozanini.github.io/2017/08/15/How-Ansible-Galaxy-can-short-your-way-to-awesomeness.html">How Ansible Galaxy can short your way to awesomeness</a></h2>
+            <h2 class="post-title"><a href="https://ricardozanini.github.io/2017/08/18/or-how-Ansible-Galaxy-can-short-your-way-to-awesomeness.html">How a developer could short their way on the Ansible learning</a></h2>
         </header>
         <section class="post-content">
             <div id="preamble">
     <div class="sectionbody">
     <div class="paragraph">
-    <p>You&#8217;ve learned <a href="http://docs.ansible.com/ansible/latest/intro.html">all the basics of Ansible</a> and now are arguing yourself: where&#8217;s the patterns? How do I start using Ansible on a regular basis? How can I do this or that? I&#8217;m newbie on OS and I barely know where to start..</p>
+    <p>You&#8217;re a developer and gets starting feeling anxious to learn about Ansible (everybody is talking about it), but you barely know how to list a directory on a Linux machine! Don&#8217;t worry, you could use your developer skills to learn Ansible and starting doing some magic to build your way towards DevOps in a short time with a little help of Ansible Galaxy.</p>
+    </div>
+    <div class="paragraph">
+    <p>So you&#8217;ve learned <a href="http://docs.ansible.com/ansible/latest/intro.html">all the basics of Ansible</a> and now are arguing yourself: where&#8217;s the patterns? How do I start using Ansible on a regular basis? How can I do this or that? I&#8217;m newbie on OS and I barely know where to start..</p>
     </div>
     <div class="paragraph">
     <p>I don&#8217;t know if I&#8217;ll provide the answers for all these questions, but I may help guide your way through it.</p>
@@ -99,7 +102,7 @@
     <p><strong>Reusable</strong>. That&#8217;s the word IT people always (or should) care about. Roles on Ansible is a great way to reuse a piece of task that you always have to do when provisioning some environment. I won&#8217;t extend myself here on how to create a role, for that please take a look on the <a href="http://docs.ansible.com/ansible/latest/playbooks_roles.html">official docs</a> that you should have your answers.</p>
     </div>
     <div class="paragraph">
-    <p>Instead, I&#8217;d like to bring your attention on Ansible Galaxy and how you can reuse someone else&#8217;s work or contribute to it while learning something great. Galaxy is the <a href="https://hub.docker.com/">Docker Hub</a> for docker images or the Github for open source projects. There will you find a lot of roles people already did so you could take them and orchestrate your playbook on a way that it could do barely anything you need.</p>
+    <p>Instead, I&#8217;d like to bring your attention on Ansible Galaxy and how you can reuse someone else&#8217;s work or contribute to it while learning something great. Galaxy is the <a href="https://hub.docker.com/">Docker Hub</a> for docker images or the Github for open source projects. There you&#8217;ll find a lot of roles people already did so you could take them and orchestrate your playbook on a way that it could do barely anything you need.</p>
     </div>
     <div class="paragraph">
     <p>So Ansible Galaxy can help you with: (a) learn by example by looking on the code other people already provided and; (b) create great playbooks by orchestrating with roles that have been done by the community.</p>
@@ -108,7 +111,7 @@
     <p>Let&#8217;s take a look on a <a href="https://bitbucket.org/tecnobizz/vagrant-alm">project I&#8217;m working on</a> that&#8217;s provisioning a environment to set up a sort of an <a href="https://en.wikipedia.org/wiki/Application_lifecycle_management">ALM process</a>. For that, I need to provision three servers: <a href="https://jenkins.io/">Jenkins</a> for CI/CD process, <a href="https://www.sonarsource.com/">SonarSource</a> for quality analysis and <a href="http://www.sonatype.org/nexus/">Nexus</a> for artifact repository.</p>
     </div>
     <div class="paragraph">
-    <p>To provision all the three servers requires a lot of vanilla work that I, as an only enthusiast of Ansible and SO in general surely will take <strong>a lot</strong> of time to do so. And we don&#8217;t have that time, right? Take a deep breath, a couple of coffee and go along with me.</p>
+    <p>To provision all the three servers requires a lot of vanilla work that I, as an only enthusiast of Ansible and OS in general surely will take <strong>a lot</strong> of time to do so. And we don&#8217;t have that time, right? Take a deep breath, a couple of coffee and go along with me.</p>
     </div>
     </div>
     </div>
@@ -151,13 +154,16 @@
     </div>
     </div>
     <div class="paragraph">
+    <p>Then you should work on a virtual machine environment. For that you could use <a href="http://docs.ansible.com/ansible/latest/guide_vagrant.html">Vagrant on top of libvirt</a>.</p>
+    </div>
+    <div class="paragraph">
     <p>And that&#8217;s it! You should have your environment set up. For more detailed information about the installation and configuration of Ansible Galaxy, please <a href="http://docs.ansible.com/ansible/latest/galaxy.html">check the docs</a>.</p>
     </div>
     </div>
     <div class="sect2">
     <h3 id="_3_looking_for_roles_that_you_need">3) Looking for roles that you need</h3>
     <div class="paragraph">
-    <p>So now you have the plan for what you need to do and the Ansible Galaxy set up on your environment. Let&#8217;s search for the roles that we need to <strong>compose</strong> our playbook so we can provision all the three servers at once.</p>
+    <p>So now you have the plan for what you need to do and the Ansible Galaxy configured on your environment. Let&#8217;s search for the roles that we need to <strong>compose</strong> our playbook so we can provision all the three servers at once.</p>
     </div>
     <div class="paragraph">
     <p>Remember that you just need to bring all these roles from the Galaxy repository and run them on a orchestrate fashion to do what you need.</p>
@@ -180,7 +186,7 @@
     <p>2 - <strong>Ansible Galaxy Web UI Search</strong>.</p>
     </div>
     <div class="paragraph">
-    <p>Go to <a href="https://galaxy.ansible.com/">the Ansible Galaxy web site</a> and start exploring or browsing for a role. Let&#8217;s use the same example as before and just search for Jenkins. Click on "Browse Roles" and type "Jenkins" on keyword (or just <a href="https://galaxy.ansible.com/list#/roles?page=1&amp;page_size=10&amp;autocomplete=jenkins">click here</a>). You&#8217;ll see a nice interface and a sort function that will make all the difference: <code>Stargazers</code>. That means we can filter by the most relevant and upvoted role by the community. Prefer to take that one with the most starts. For this example, the chosen role will be the <a href="https://galaxy.ansible.com/geerlingguy/jenkins/">geerlingguy one</a>.</p>
+    <p>Go to <a href="https://galaxy.ansible.com/">the Ansible Galaxy web site</a> and start exploring or browsing for a role. Let&#8217;s use the same example as before and just search for Jenkins. Click on "Browse Roles" and type "Jenkins" on keyword (or just <a href="https://galaxy.ansible.com/list#/roles?page=1&amp;page_size=10&amp;autocomplete=jenkins">click here</a>). You&#8217;ll see a nice interface and a sort function that will make all the difference: <code>Stargazers</code>. That means we can filter by the most relevant and upvoted roles by the community. Prefer to take that one with the most starts. For this example, the chosen role will be the <a href="https://galaxy.ansible.com/geerlingguy/jenkins/">geerlingguy one</a>.</p>
     </div>
     <div class="paragraph">
     <p>3 - <strong>Google it</strong>.</p>
@@ -195,7 +201,7 @@
     <div class="sect2">
     <h3 id="_4_read_the_docs_explore_their_code">4) Read the docs, explore their code</h3>
     <div class="paragraph">
-    <p>First things first. Read all available documentation on the project you choose and pay attention on the extension points that normally will be variables you should set to get the role do what you need. Take for example the <a href="https://github.com/geerlingguy/ansible-role-java">Geerling Guy&#8217;s Java role</a>.</p>
+    <p>First things first. Read all available documentation on the project you choose and pay attention on the extension points. These normally are variables you should set to get the role do what you need. Take for example the <a href="https://github.com/geerlingguy/ansible-role-java">Geerling Guy&#8217;s Java role</a>.</p>
     </div>
     <div class="paragraph">
     <p>On this role you could set the Java version you want to be installed just by setting the <code>java_packages</code> variable.</p>
@@ -209,7 +215,7 @@
     </div>
     </div>
     <div class="paragraph">
-    <p>You have to have internet connection so Ansible could connect on the repository and bring the role and all the dependencies it needs. After the installation process, check for the role installed on your system:</p>
+    <p>You have to have internet connection so Ansible could connect on the repository and bring the role and all the dependencies it needs (maven, anyone?). After the installation process, check for the role installed on your system:</p>
     </div>
     <div class="listingblock">
     <div class="content">
@@ -220,7 +226,7 @@
     <p>You should see the Jenkins role installed on your system provided with the version and all the other dependencies it needs. Ansible Galaxy works like many others package managers over there: it downloads all other required dependencies so you can work with it without any worries. Remember the Ansible Role&#8217;s path set on step #2? Try to list the directory and you&#8217;ll see all the roles there too.</p>
     </div>
     <div class="paragraph">
-    <p>Explore their work by looking for what the role really do. Start by exploring the <code>$ANSIBLE_ROLES_PATH/roles/geerlingguy.jenkins/tasks/main.yml</code>. Normally this is the starting point of the role and you really could see what&#8217;s going on. Try to understand their code and how things are been doing there. It&#8217;s a very nice exercise to learn by example and to absorb concepts harder to get on books or manuals.</p>
+    <p>Explore the role&#8217;s creator work by looking for what the role really do. Start by exploring the <code>$ANSIBLE_ROLES_PATH/roles/geerlingguy.jenkins/tasks/main.yml</code>. Normally this is the starting point of the role and you really could see what&#8217;s going on. Try to understand their code and how things are been doing there. It&#8217;s a very nice exercise to learn by example and to absorb concepts harder to get on books or manuals.</p>
     </div>
     <div class="paragraph">
     <p>After that, be comfortable with their code and explore everything else, trying to understand how the pieces are working together to make the role that awesome.</p>
@@ -296,7 +302,7 @@
     <p>This way we can tell Ansible that we need this role to perform our tasks.</p>
     </div>
     <div class="paragraph">
-    <p>5 - <code>requirements.yml</code>. Besides the name, this isn&#8217;t a required file for your project, but it&#8217;s very handy because we can list all Ansible Galaxy&#8217;s roles that we need and download then if just one line of command:</p>
+    <p>5 - <code>requirements.yml</code>. Besides the name, this isn&#8217;t a required file for your project, but it&#8217;s very handy because we can list all Ansible Galaxy&#8217;s roles that we need and download then with just one command line:</p>
     </div>
     <div class="listingblock">
     <div class="content">
@@ -310,7 +316,7 @@
     <div class="sect2">
     <h3 id="_the_bottom_line">The Bottom Line</h3>
     <div class="paragraph">
-    <p>Now it&#8217;s time to shine. Gather every role you could search for that you are going to use on your project and start chaining them together for awesomeness. In a short time you&#8217;ll be creating your own roles, contributing for the ones already on the community and do a great job on your own playbooks. Just to help you out, take a look <a href="https://bitbucket.org/tecnobizz/vagrant-alm">at this project</a> that I did to provision all the three servers for a ALM process I was talking about at the start of this post. There I orchestrate a simple playbook to create all the three machines using just three tasks: provision Jenkins, Sonar Source and Nexus.</p>
+    <p>Now it&#8217;s time to shine. Gather every role you could search for that you are going to use on your project and start chaining them together for awesomeness. In a short time you&#8217;ll be creating your own roles, contributing for the ones already on the community and do a great job on your own playbooks. Just to help you out, take a look <a href="https://bitbucket.org/tecnobizz/vagrant-alm">at this project</a> that I did to provision all the three servers for a ALM process I was talking about at the begining of this post. There I orchestrate a simple playbook to create all the three machines using just three tasks: provision Jenkins, Sonar Source and Nexus.</p>
     </div>
     <div class="paragraph">
     <p>See you next time.</p>
@@ -321,7 +327,7 @@
             <img class="author-thumb" src="https://avatars3.githubusercontent.com/u/1538000?v&#x3D;4" alt="Ricardo Zanini" nopin="nopin" />
             <a href="https://ricardozanini.github.io/author/ricardozanini/">Ricardo Zanini</a>
              on <a href="https://ricardozanini.github.io/tag/Ansible/">Ansible</a>, <a href="https://ricardozanini.github.io/tag/Ansible-Galaxy/">Ansible_Galaxy</a>
-            <time class="post-date" datetime="2017-08-15">15 August 2017</time>
+            <time class="post-date" datetime="2017-08-18">18 August 2017</time>
         </footer>
     </article>
     
@@ -354,8 +360,8 @@
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//ricardozanini.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1503086352624"></script>
-    <script type="text/javascript" src="//ricardozanini.github.io/themes/casper/assets/js/index.js?v=1503086352624"></script>
+    <script type="text/javascript" src="//ricardozanini.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1503698090462"></script>
+    <script type="text/javascript" src="//ricardozanini.github.io/themes/casper/assets/js/index.js?v=1503698090462"></script>
 
 </body>
 </html>
