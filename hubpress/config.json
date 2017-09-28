@@ -7,7 +7,7 @@
   },
   "site": {
     "title": "Corrientes",
-    "description": "rm -rf /*",
+    "description": "rm -rf *",
     "postsPerPage": "1",
     "disqus": "corrientes-blog",
     "logo": "",
