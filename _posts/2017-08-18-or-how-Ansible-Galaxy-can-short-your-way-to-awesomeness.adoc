@@ -1,7 +1,7 @@
 = How a developer could short their way on the Ansible learning
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 :hp-image: /covers/galaxy_cover.jpg
-:published_at: 2017-08-18
+// :published_at: 2017-08-18
 :hp-tags: Ansible, Ansible_Galaxy
 :hp-alt-title: ...or how Ansible Galaxy can short your way to awesomeness
 
