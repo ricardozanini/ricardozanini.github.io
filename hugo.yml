@@ -1,0 +1,5 @@
+baseURL: "https://ricardozanini.github.io/"
+languageCode: "en-us"
+title: "Ricardo Zanini"
+theme:
+  - "PaperMod"
