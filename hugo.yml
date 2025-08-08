@@ -3,3 +3,33 @@ languageCode: "en-us"
 title: "Ricardo Zanini"
 theme:
   - "PaperMod"
+ 
+permalinks:
+  posts: "/:year/:month/:day/:slug/"
+
+enableGitInfo: true
+
+frontmatter:
+  lastmod:
+    - :git
+    - lastmod
+    - :fileModTime
+    - :default
+
+params:
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowToc: true
+  mainSections: ["posts"]
+
+menu:
+  main:
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 20
+
+#markup:
+#  goldmark:
+#    renderer:
+#      unsafe: true
