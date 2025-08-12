@@ -2,6 +2,8 @@
 title: "Please stop vibe coding"
 draft: true
 date: 2025-08-08
+tags: ["AI", "coding"]
+categories: ["Engineering"]
 ---
 
 The other day, this meme appeared on my timeline.
@@ -53,8 +55,6 @@ The code generated is small enough for you to test, verify, and judge. The narro
 
 ---
 <!-- Conclusion -->
-Remember, LLMs are better at searching and are more likely to give you what you need. Instead of spending hours on Stack Overflow, blogs, and GitHub issues, ask a model. You’ll get to the solution faster.
-
-By narrowing the scope, you will boost your productivity and grow as a software engineering professional.
+Remember, LLMs are better at searching and are more likely to give you what you need. Instead of spending hours on Stack Overflow, blogs, and GitHub issues, ask a model. You’ll get to solutions faster. Just don't overuse it or delegate everything to the model.
 
 Own your work, don't let the machine do it.
