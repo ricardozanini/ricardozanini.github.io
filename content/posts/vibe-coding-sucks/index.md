@@ -1,6 +1,6 @@
 ---
 title: "Please stop vibe coding"
-draft: true
+draft: false
 date: 2025-08-08
 tags: ["AI", "coding"]
 categories: ["Engineering"]
