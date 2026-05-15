@@ -1,7 +1,7 @@
 ---
 title: "What are workflows and why do I need them?"
 draft: false
-date: 2026-05-16
+date: 2026-05-15
 tags: ["workflows", "java", "quarkus flow"]
 categories: ["Engineering", "Workflow Patterns"]
 ---
