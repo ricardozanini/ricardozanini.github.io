@@ -59,9 +59,9 @@ If we look closely at this `pollForApprovedRequests` method, we haven't just wri
 
 To keep the system maintainable, we must separate the *process* from the *application code*. 
 
-The Workflow Management Coalition (WfMC) formally defines a workflow as "The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules" (van der Aalst et al., 2003). In pragmatic terms, a workflow engine acts as a dedicated control plane. It takes over the responsibility of routing data, tracking state, and enforcing the rules, allowing your microservices to remain stateless and focused solely on execution.
+The Workflow Management Coalition (WfMC) formally defines a workflow as "The automation of a business process, in whole or part, during which documents, information, or tasks are passed from one participant to another for action, according to a set of procedural rules" (van der Aalst et al., 2003). In pragmatic terms, a workflow engine acts as a dedicated control plane. It takes over the responsibility of routing data, tracking state, and enforcing the rules, allowing your microservices to remain stateless and focused solely on execution.
 
-**[Quarkus Flow](https://github.com/quarkiverse/quarkus-flow)** brings this specification directly to the Java ecosystem. It is a workflow runtime library built on top of **[Quarkus](https://quarkus.io)**, allowing you to embed a lightweight workflow engine inside any microservice. Because it leverages Quarkus's build-time augmentation and compiles natively via **[GraalVM](https://www.graalvm.org)**, the engine boots in milliseconds and easily supports scale-to-zero architectures. More importantly, it allows developers to move away from opaque YAML configurations and define orchestrations using a type-safe, fluent Java DSL.
+**[Quarkus Flow](https://github.com/quarkiverse/quarkus-flow)** brings the [Serverless Workflow specification](https://serverlessworkflow.io/) directly to the Java ecosystem. It is a workflow runtime library built on top of **[Quarkus](https://quarkus.io)**, allowing you to embed a lightweight workflow engine inside any microservice. Because it leverages Quarkus's build-time augmentation and compiles natively via **[GraalVM](https://www.graalvm.org)**, the engine boots in milliseconds and easily supports scale-to-zero architectures. More importantly, it allows developers to move away from opaque YAML configurations and define orchestrations using a type-safe, fluent Java DSL.
 
 ### Declarative Orchestration with Quarkus Flow
 
@@ -92,10 +92,7 @@ public class AccessProvisioningWorkflow extends Flow {
                 .schedule(on(one("org.acme.access.approved")))
                 .tasks(
                         // 2. Execute the provisioning task
-                        function("provisionAccess", (AccessRequest request) -> {
-                            ProvisionResult result = provisioner.grantAccess(request.getUserId());
-                            return result;
-                        }),
+                        function("provisionAccess", (AccessRequest request) -> provisioner.grantAccess(request.getUserId())),
 
                         // 3. Evaluate the result and route the flow
                         switchWhenOrElse("checkProvisioning",
