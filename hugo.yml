@@ -1,8 +1,13 @@
 baseURL: "https://ricardozanini.github.io/"
-languageCode: "en-us"
+defaultContentLanguage: "en"
 title: "Ricardo Zanini"
 theme:
   - "PaperMod"
+
+author:
+  name: "Ricardo Zanini"
+  email: "ricardozanini@gmail.com"
+  url: "https://ricardozanini.github.io/"
  
 permalinks:
   posts: "/:year/:month/:day/:slug/"
