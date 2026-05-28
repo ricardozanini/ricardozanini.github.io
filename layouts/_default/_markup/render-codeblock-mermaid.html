@@ -1,0 +1,7 @@
+<!-- 1. Transforms the Markdown code block into a Mermaid div -->
+<div class="mermaid">
+  {{- .Inner | safeHTML }}
+</div>
+
+<!-- 2. Sets a flag telling Hugo this specific page has a diagram -->
+{{ .Page.Store.Set "hasMermaid" true }}
