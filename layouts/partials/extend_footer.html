@@ -1,0 +1,19 @@
+<!-- Checks the flag set by the render hook. If true, it loads the script. -->
+{{ if .Store.Get "hasMermaid" }}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ 
+      startOnLoad: true, 
+      theme: 'base', 
+      themeVariables: {
+        background: 'transparent',
+        primaryColor: 'transparent',
+        primaryTextColor: 'var(--primary)',
+        primaryBorderColor: 'var(--primary)',
+        lineColor: 'var(--primary)',
+        textColor: 'var(--primary)'
+      },
+      securityLevel: 'loose'
+    });
+  </script>
+{{ end }}
