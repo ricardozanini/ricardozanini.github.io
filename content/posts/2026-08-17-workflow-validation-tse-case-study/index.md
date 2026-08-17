@@ -246,7 +246,7 @@ public class ValidatedAffiliationWorkflow extends Flow {
     }
 
     record ValidationResult(boolean suspicious, String reason) {}
-    record ReviewDecision(boolean approved) {}
+    record ReviewDecision(boolean approved, String reason) {}
 }
 ```
 
@@ -437,7 +437,7 @@ flowchart TD
     end
 ```
 
-Each gate is a `listen` task. Each validation is a `switch` or AI function. Each timeout is a `wait` with compensation. The workflow engine handles state persistence, event correlation, and timeout management — the complexity that ad-hoc implementations invariably get wrong.
+Each gate is a `listen` task. Each validation is a `switch` or AI function. Each timeout is configured directly on the `listen` task. The workflow engine handles state persistence, event correlation, and timeout management — the complexity that ad-hoc implementations invariably get wrong.
 
 ### Systems That Handle Trust Require Workflows That Enforce It
 
@@ -445,7 +445,7 @@ The TSE affiliation incident was not a hack. The credentials were valid. The sys
 
 When systems handle identity-sensitive registrations — party affiliations, corporate directorships, property titles, medical authorizations — they cannot rely solely on access control. Valid credentials are necessary but not sufficient. The workflow itself must enforce validation: domain-based escalation, AI-powered anomaly detection, multi-party confirmation, and time-bounded compensation.
 
-These are not exotic patterns. They are the kind of orchestration logic that workflow engines like [Quarkus Flow](https://github.com/quarkiverse/quarkus-flow) make straightforward to implement. A `listen` task waiting for human approval. A `function` task calling an LLM validator. A `fork` task managing compensation windows. The building blocks exist.
+These are not exotic patterns. They are the kind of orchestration logic that workflow engines like [Quarkus Flow](https://github.com/quarkiverse/quarkus-flow) make straightforward to implement. A `listen` task waiting for human approval. A `function` task calling an LLM validator. A `timeout` on a `listen` task enforcing compensation windows. The building blocks exist.
 
 What was missing in August 2026 was not technology. It was architecture.
 
