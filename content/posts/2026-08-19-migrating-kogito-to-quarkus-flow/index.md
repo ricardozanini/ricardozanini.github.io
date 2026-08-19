@@ -1,12 +1,12 @@
 ---
 title: "From Apache KIE SonataFlow and Kogito to Quarkus Flow: Migrating to Open Workflow 1.0"
 draft: false
-date: 2026-08-17
+date: 2026-08-19
 tags: ["workflows", "java", "quarkus flow", "kogito", "migration", "open workflow specification"]
 categories: ["Engineering", "Workflow Patterns"]
 ---
 
-If you have been running Kogito Serverless Workflows in production, you are likely aware that the landscape has shifted. The specification evolved from version 0.8 to 1.0.0, the project was [renamed from Serverless Workflow to Open Workflow Specification](https://openworkflow.cloud/blog/general/announcing-rename-to-open-workflow-specification/), and the runtime engine moved from Apache KIE to the Quarkiverse. This is not a minor version bump — it is a fundamental paradigm shift from state machines to task-based orchestration.
+If you have been running Kogito Serverless Workflows in production, you are likely aware that the landscape has shifted. The specification evolved from version 0.8 to 1.0.0, the project was [renamed from Serverless Workflow to Open Workflow Specification](https://openworkflow.cloud/blog/general/announcing-rename-to-open-workflow-specification/), and the runtime engine moved from Apache KIE to the Quarkiverse. This is not a minor version bump — it is a fundamental paradigm shift in how workflows are defined, moving from explicit state declarations to task-based orchestration.
 
 The good news: **[Quarkus Flow](https://github.com/quarkiverse/quarkus-flow)** is the natural migration path. It implements the [Open Workflow Specification](https://github.com/open-workflow-specification/specification) 1.0.0 on a completely rewritten engine, purpose-built for the new spec's semantics. This post explains why we sunset Apache KIE SonataFlow and created Quarkus Flow, what changed in the specification, and how to migrate your existing workflows.
 
@@ -16,13 +16,13 @@ Apache KIE — the organization behind Kogito — maintains a portfolio of busin
 
 This architectural choice created friction. jBPM is a BPMN engine designed for long-running business processes with human tasks, compensation handlers, and complex transaction semantics. The Serverless Workflow specification, by contrast, describes lightweight, event-driven orchestrations optimized for cloud-native microservices. Mapping the spec's callback states, event correlations, and parallel branches onto jBPM's internal model required significant workaround code — and that complexity leaked into the runtime behavior.
 
-The [Open Workflow Specification](https://github.com/open-workflow-specification/specification) (OWS) 1.0.0 took a different direction. It abandoned the state-machine paradigm entirely in favor of a task-based model with implicit flow control. None of the KIE or Kogito API contracts make sense for this new architecture. Rather than force-fitting the new spec onto jBPM, we understood it was time to build a clean-room implementation backed by the official OWS Java SDK, while allowing jBPM and Kogito to do what they do best — Business Automation.
+The [Open Workflow Specification](https://github.com/open-workflow-specification/specification) (OWS) 1.0.0 took a different direction. The DSL moved away from explicit state declarations in favor of a task-based model with implicit flow control. None of the KIE or Kogito API contracts make sense for this new architecture. Rather than force-fitting the new spec onto jBPM, we understood it was time to build a clean-room implementation backed by the official OWS Java SDK, while allowing jBPM and Kogito to do what they do best — Business Automation.
 
 The result is Quarkus Flow: a lightweight, CDI-first workflow engine with zero jBPM inheritance.
 
 ### The Specification Change: States to Tasks
 
-The most significant change between 0.8 and 1.0.0 is the fundamental execution model. Version 0.8 defined workflows as explicit state machines with eight state types (`Event`, `Operation`, `Switch`, `Inject`, `ForEach`, `Parallel`, `Sleep`, `Callback`) connected by `transition` properties. Version 1.0.0 replaces this with a task-based model where execution flows implicitly through an ordered list of tasks.
+The most significant change between 0.8 and 1.0.0 is how workflows are defined. Version 0.8 required explicit state declarations with eight state types (`Event`, `Operation`, `Switch`, `Inject`, `ForEach`, `Parallel`, `Sleep`, `Callback`) connected by `transition` properties. Version 1.0.0 replaces this DSL with a task-based model where execution flows implicitly through an ordered list of tasks.
 
 | Aspect | 0.8.x (States) | 1.0.0 (Tasks) |
 |--------|----------------|---------------|
