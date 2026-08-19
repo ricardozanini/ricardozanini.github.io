@@ -31,7 +31,7 @@ The most significant change between 0.8 and 1.0.0 is how workflows are defined. 
 | Document structure | Flat (`id`, `name`, `version` at root) | Nested under `document:` with `namespace` |
 | Reusable components | `functions:`, `events:`, `retries:` at root | Consolidated under `use:` block |
 | Data transformation | `stateDataFilter`, `actionDataFilter` | Unified `input`/`output` on tasks |
-| Expression language | JsonPath or jq | jq as default |
+| Expression language | JSONPath or jq | jq as default |
 
 The mapping from old state types to new task types is mostly straightforward:
 
@@ -139,7 +139,7 @@ Kogito offered a complete cloud-native stack: the SonataFlow Operator for Kubern
 
 **Under development at [kubesmarts.org](https://kubesmarts.org):**
 - **Logic Operator**: Kubernetes operator for managing workflow deployments ([kubesmarts/logic-apps](https://github.com/kubesmarts/logic-apps/))
-- **Data Index**: Read-only GraphQL query service for workflow execution data, supporting FluentBit or Kafka event ingestion with PostgreSQL or Elasticsearch storage ([documentation](https://kubesmarts.org/logic-apps/data-index/1.0.0/index.html))
+- **Data Index**: Read-only GraphQL query service for workflow execution data, supporting Fluent Bit or Kafka event ingestion with PostgreSQL or Elasticsearch storage ([documentation](https://kubesmarts.org/logic-apps/data-index/1.0.0/index.html))
 
 The cloud platform components are being built in parallel with the core engine. Users who need Kubernetes-native deployment today can use Quarkus Flow as an embedded library within standard Quarkus applications deployed via Helm, Kustomize, or any container orchestration tool.
 
